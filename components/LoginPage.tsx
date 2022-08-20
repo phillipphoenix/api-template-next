@@ -1,15 +1,31 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
+import useUser from "../hooks/useUser";
+import fetchJson, { FetchError } from "../lib/fetchJson";
 import { Button } from "./atoms/buttons/Button";
 
 type LoginFormType = {
-  username: string;
+  email: string;
   password: string;
 };
 
 export const LoginPage: FC = () => {
+  // here we just check if user is already logged in and redirect to profile
+  const { login } = useUser({
+    redirectTo: "/",
+    redirectIfFound: true,
+  });
+
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
   const { register, handleSubmit } = useForm<LoginFormType>();
-  const onSubmit = (data: LoginFormType) => console.log("DATA: ", data);
+
+  const onSubmit = async (data: LoginFormType) => {
+    const { error } = await login(data.email, data.password);
+    if (error) {
+      setErrorMsg(error.message);
+    }
+  };
 
   return (
     <div>
@@ -24,9 +40,9 @@ export const LoginPage: FC = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex flex-col gap-3">
-              <label>Username</label>
+              <label>Email</label>
               <input
-                {...register("username")}
+                {...register("email")}
                 placeholder="noob-slayer13"
                 className="border border-slate-300 p-2 rounded-lg"
               />
@@ -40,6 +56,7 @@ export const LoginPage: FC = () => {
               />
             </div>
             <Button className="mt-6">Log in</Button>
+            {errorMsg && <p className="mt-4 text-red-700">{errorMsg}</p>}
           </form>
         </div>
       </main>

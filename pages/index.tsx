@@ -1,6 +1,9 @@
 import Head from "next/head";
+import useUser from "../hooks/useUser";
 
 export default function Home() {
+  const { user } = useUser({ redirectTo: "/login" });
+
   return (
     <div className="">
       <Head>
