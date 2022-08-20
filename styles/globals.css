@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Poppins:wght@200;400;700&family=Roboto+Slab:wght@400;600&display=swap");
+
+@tailwind base;
+
+@layer base {
+  body {
+    @apply bg-slate-100;
+    @apply font-serif;
+  }
+  h1 {
+    @apply text-3xl;
+    @apply font-serif;
+  }
+  h2 {
+    @apply text-2xl;
+    @apply font-serif;
+  }
+  h3 {
+    @apply text-xl;
+    @apply font-serif;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
