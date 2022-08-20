@@ -8,7 +8,6 @@ export type User = {
 };
 
 export default withIronSessionApiRoute(function userRoute(req, res) {
-  console.log("SESSION: ", req.session);
   if (req.session.user) {
     return res.json({ ...req.session.user, isLoggedIn: true });
   }
