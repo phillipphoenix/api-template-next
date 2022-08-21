@@ -5,9 +5,7 @@ import "swagger-ui-react/swagger-ui.css";
 import { AuthedLayout } from "../components/layouts/AuthedLayout";
 import useUser from "../hooks/useUser";
 
-const SwaggerUI = dynamic<{
-  spec: any;
-}>(import("swagger-ui-react"), { ssr: false });
+const SwaggerUI = dynamic(() => import("swagger-ui-react"), { ssr: false });
 
 function ApiDoc({ spec }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { user } = useUser({ redirectTo: "/login" });
