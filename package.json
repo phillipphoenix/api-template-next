@@ -11,7 +11,7 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "heroku-postbuild": "npm run prisma:setup"
+    "heroku-postbuild": "npm run build && npm run prisma:setup"
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",
