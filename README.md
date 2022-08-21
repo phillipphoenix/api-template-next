@@ -18,6 +18,8 @@ It could also be used as a baseline for creating a custom headless CMS.
 
 **See demo at [DEMO](https://api-template-project.herokuapp.com/) 🏠.**
 
+![API Template Project demo](./readme-assets/api-template-project-demo.gif)
+
 ## Getting Started
 
 Set up environment variables for Prisma in `prisma/.env` (see `prisma/.env.example`).
