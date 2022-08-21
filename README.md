@@ -16,6 +16,8 @@ So it can be used for microservice/service architecture setups or just for makin
 
 It could also be used as a baseline for creating a custom headless CMS.
 
+**See demo at [DEMO](https://api-template-project.herokuapp.com/) 🏠.**
+
 ## Getting Started
 
 Set up environment variables for Prisma in `prisma/.env` (see `prisma/.env.example`).
