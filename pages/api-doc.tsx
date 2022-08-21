@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { createSwaggerSpec } from "next-swagger-doc";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import "swagger-ui-react/swagger-ui.css";
 import { AuthedLayout } from "../components/layouts/AuthedLayout";
 import useUser from "../hooks/useUser";
@@ -12,6 +13,9 @@ function ApiDoc({ spec }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   return (
     <AuthedLayout user={user}>
+      <Head>
+        <title>API Template Project - API Documentation</title>
+      </Head>
       <SwaggerUI spec={spec} />
     </AuthedLayout>
   );

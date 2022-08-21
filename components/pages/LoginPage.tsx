@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
-import useUser from "../hooks/useUser";
-import { Button } from "./atoms/buttons/Button";
+import useUser from "../../hooks/useUser";
+import { Button } from "../atoms/buttons/Button";
 
 type LoginFormType = {
   email: string;
@@ -42,7 +42,7 @@ export const LoginPage: FC = () => {
               <label>Email</label>
               <input
                 {...register("email")}
-                placeholder="noob-slayer13"
+                placeholder="noob-slayer13@dndtest.io"
                 className="border border-slate-300 p-2 rounded-lg"
               />
             </div>

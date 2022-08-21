@@ -10,7 +10,7 @@ export default function ExampleSsr({
   return (
     <AuthedLayout user={user}>
       <div>
-        <h1>Hello {user?.email}</h1>
+        <h1>Hello {user?.email}, from a server side rendered</h1>
       </div>
     </AuthedLayout>
   );

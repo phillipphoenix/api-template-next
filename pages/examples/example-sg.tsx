@@ -7,7 +7,7 @@ export default function ExampleSg() {
   return (
     <AuthedLayout user={user}>
       <div>
-        <h1>Hello {user?.email}</h1>
+        <h1>Hello {user?.email}, from a static page</h1>
       </div>
     </AuthedLayout>
   );
