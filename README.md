@@ -18,7 +18,19 @@ It could also be used as a baseline for creating a custom CMS.
 
 ## Getting Started
 
-First, run the development server:
+Set up environment variables for Prisma in `prisma/.env` (see `prisma/.env.example`).
+
+Then set up environment variables for the rest of the app in `.env.local` (see `.env.local.example`).
+
+Run the following command to create and seed the database along with creating type safe Prisma types:
+
+```bash
+npm run prisma:setup
+# or
+yarn prisma:setup
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
