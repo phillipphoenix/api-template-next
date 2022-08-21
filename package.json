@@ -10,7 +10,8 @@
     "prisma:setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "heroku-postbuild": "npm run prisma:setup"
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",
