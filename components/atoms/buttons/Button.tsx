@@ -66,7 +66,12 @@ export const Button: FC<ButtonProps> = ({
       animationVariantClassnames +
       " " +
       className,
-    [colourSchemeClassnames, animationVariantClassnames, className]
+    [
+      colourSchemeClassnames,
+      sizeClassnames,
+      animationVariantClassnames,
+      className,
+    ]
   );
 
   return (
