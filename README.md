@@ -14,7 +14,7 @@ Some of the features include:
 This project was made to make it easier to create API services quickly.
 So it can be used for microservice/service architecture setups or just for making a public API.
 
-It could also be used as a baseline for creating a custom CMS.
+It could also be used as a baseline for creating a custom headless CMS.
 
 ## Getting Started
 
