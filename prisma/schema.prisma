@@ -24,11 +24,12 @@ model User {
 
 // NOTE: About API keys https://www.freecodecamp.org/news/best-practices-for-building-api-keys-97c26eabfea9/
 
-// model ApiKey {
-//   id        Int           @id @default(autoincrement())
-//   name      String
-//   prefix    String        @unique
-//   hashedKey String        @unique
-//   createdAt DateTime      @default(now())
-//   updatedAt DateTime      @updatedAt
-// }
+model ApiKey {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar
+  prefix    String   @unique @db.VarChar
+  keyHash   String   @unique @db.VarChar
+  keySalt   String   @unique @db.VarChar
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

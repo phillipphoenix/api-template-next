@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import useUser from "../hooks/useUser";
-import fetchJson, { FetchError } from "../lib/fetchJson";
 import { Button } from "./atoms/buttons/Button";
 
 type LoginFormType = {

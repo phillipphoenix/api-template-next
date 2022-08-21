@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { useClassnames } from "../../../hooks/useClassnames";
 
 type ButtonColourScheme = "primary" | "secondary" | "danger" | "success";
-type Size = "sm" | "md" | "lg";
+type Size = "xs" | "sm" | "md" | "lg";
 type AnimationVariant = "default" | "scale";
 
 const buttonColourSchemes: Record<ButtonColourScheme, string> = {
@@ -18,6 +18,7 @@ const buttonColourSchemes: Record<ButtonColourScheme, string> = {
 };
 
 const sizes: Record<Size, string> = {
+  xs: "px-2 py-1 text-sm",
   sm: "px-2 py-2 text-sm",
   md: "px-4 py-2 text-base",
   lg: "px-8 py-4 text-xl",

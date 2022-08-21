@@ -5,7 +5,7 @@ type PasswordHash = {
   salt: string;
 };
 
-export const hashPassword = (password: string) => {
+export const hashPassword = (password: string): PasswordHash => {
   // Create a unique salt.
   const salt = crypto.randomBytes(16).toString("hex");
 
