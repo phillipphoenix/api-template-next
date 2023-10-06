@@ -27,7 +27,7 @@ export default function useUser({
 
   const login = async (
     email: string,
-    password: string
+    password: string,
   ): Promise<{ data?: User; error?: FetchError }> => {
     try {
       const user = await fetchJson<User>("/api/auth/login", {

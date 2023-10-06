@@ -21,7 +21,7 @@ export const hashPassword = (password: string): PasswordHash => {
 export const validatePassword = (
   password: string,
   hash: string,
-  salt: string
+  salt: string,
 ) => {
   // Hash the password with the same salt.
   const passwordHash = crypto

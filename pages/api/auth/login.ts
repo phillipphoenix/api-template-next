@@ -22,7 +22,7 @@ export default withIronSessionApiRoute(async function loginRoute(req, res) {
   const isValid = await validatePassword(
     password,
     userData.passwordHash,
-    userData.passwordSalt
+    userData.passwordSalt,
   );
 
   if (!isValid) {

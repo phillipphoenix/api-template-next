@@ -38,5 +38,4 @@ export const getServerSideProps = withIronSessionSsr(async function ({
       user: { ...user },
     },
   };
-},
-sessionOptions);
+}, sessionOptions);

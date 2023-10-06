@@ -5,5 +5,5 @@ export type ApiError = {
 
 export const NewApiError = (
   status: number,
-  statusMessage: string
+  statusMessage: string,
 ): ApiError => ({ status, statusMessage });

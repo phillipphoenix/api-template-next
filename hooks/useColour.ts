@@ -17,11 +17,11 @@ const colours = {
 export const useColour = (
   colour?: keyof typeof colours | string,
   colourDark?: keyof typeof colours | string,
-  isDark: boolean = false
+  isDark: boolean = false,
 ) => {
   const selectedColourName = useMemo(
     () => (isDark ? colourDark : colour),
-    [colour, colourDark, isDark]
+    [colour, colourDark, isDark],
   );
 
   if (!selectedColourName) {

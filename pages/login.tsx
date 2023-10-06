@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button } from "../components/atoms/buttons/Button";
 import useUser from "../hooks/useUser";
 
 type LoginFormType = {
@@ -38,14 +37,14 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="py-16 w-11/12 md:w-2/5 mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8">
+      <main className="mx-auto w-11/12 py-16 md:w-2/5">
+        <h1 className="mb-8 text-center text-4xl font-bold">
           API Template Project
         </h1>
-        <div className=" bg-white rounded-lg drop-shadow-lg border border-slate-200 px-6 py-4">
+        <div className=" rounded-lg border border-slate-200 bg-white px-6 py-4 drop-shadow-lg">
           <h2 className="text-center">Login</h2>
           <form
-            className="flex flex-col gap-4"
+            className="flex flex-col items-center gap-4"
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex flex-col gap-3">
@@ -53,7 +52,7 @@ export default function Login() {
               <input
                 {...register("email")}
                 placeholder="noob-slayer13@dndtest.io"
-                className="border border-slate-300 p-2 rounded-lg"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
             <div className="flex flex-col gap-3">
@@ -61,24 +60,24 @@ export default function Login() {
               <input
                 {...register("password")}
                 type="password"
-                className="border border-slate-300 p-2 rounded-lg"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
-            <Button className="mt-6">Log in</Button>
+            <button className="btn btn-primary mt-2 w-full">Log in</button>
             {errorMsg && <p className="mt-4 text-red-700">{errorMsg}</p>}
           </form>
         </div>
-        <div className="py-5 flex flex-col gap-3">
+        <div className="flex flex-col gap-3 py-5">
           <p className="text-center">
             If this is the demo site, you can log in with:
           </p>
-          <div className="flex flex-col gap-3 mx-auto">
+          <div className="mx-auto flex flex-col gap-3">
             <p>Email:</p>
-            <p className="font-mono px-2 py-1 border rounded-lg bg-slate-200 text-center">
+            <p className="rounded-lg border bg-slate-200 px-2 py-1 text-center font-mono">
               test@some-test.test
             </p>
             <p>Password:</p>
-            <p className="font-mono px-2 py-1 border rounded-lg bg-slate-200 text-center">
+            <p className="rounded-lg border bg-slate-200 px-2 py-1 text-center font-mono">
               test123456
             </p>
           </div>
