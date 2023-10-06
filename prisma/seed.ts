@@ -26,7 +26,7 @@ async function seed() {
 
   if (!user) {
     // Hash the password.
-    const passwordData = hashPassword(process.env.DB_SEED_USER_PASSWORD || "");
+    const passwordData = hashPassword(process.env.DB_SEED_USER_PASSWORD);
 
     await prisma.user.create({
       data: {
