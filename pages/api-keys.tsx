@@ -4,7 +4,6 @@ import { useCallback, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdContentCopy, MdDelete } from "react-icons/md";
 import useSWR from "swr";
-import { Button } from "../components/atoms/buttons/Button";
 import { AuthedLayout } from "../components/layouts/AuthedLayout";
 import useUser from "../hooks/useUser";
 import { generateApiKeyAndPrefix } from "../lib/api-keys/apiKeyUtils";
@@ -81,14 +80,14 @@ export default function ApiKeys() {
       <Head>
         <title>API Template Project - API keys</title>
       </Head>
-      <div className="max-w-screen-lg mx-auto px-5 pt-4">
-        <h1 className="text-4xl font-bold text-center mb-8">Manage API keys</h1>
-        <div className="bg-white rounded-lg drop-shadow-lg border border-slate-200 px-6 py-4">
-          <div className="flex gap-4 items-center">
+      <div className="mx-auto max-w-screen-lg px-5 pt-4">
+        <h1 className="mb-8 text-center text-4xl font-bold">Manage API keys</h1>
+        <div className="rounded-lg border border-slate-200 bg-white px-6 py-4 drop-shadow-lg">
+          <div className="flex items-center gap-4">
             <h2 className="mb-2">All API keys</h2>
-            <Button onClick={showDialog} size="xs" className="max-h-full">
+            <button onClick={showDialog} className="btn btn-xs">
               Create new API key
-            </Button>
+            </button>
           </div>
           <table className="border-collape border border-slate-200">
             <thead className="bg-slate-100 text-left">
@@ -109,14 +108,14 @@ export default function ApiKeys() {
                 <tr key={id}>
                   <td className="border border-slate-300 p-4">{name}</td>
                   <td className="border border-slate-300 p-4">{prefix}</td>
-                  <td className="border border-slate-300 p-4">
-                    <Button
-                      colourScheme="danger"
+                  <td className="border border-slate-300 p-4 text-center">
+                    <button
                       onClick={() => deleteApiKey(id)}
                       disabled={isValidating}
+                      className="btn btn-error btn-sm"
                     >
                       <MdDelete className="text-xl" />
-                    </Button>
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -126,7 +125,7 @@ export default function ApiKeys() {
       </div>
       <dialog
         ref={dialogRef}
-        className="bg-white border border-slate-300 rounded-lg px-8 py-6 backdrop:bg-slate-500 backdrop:bg-opacity-50 backdrop:top-0 backdrop:right-0 backdrop:bottom-0 backdrop:left-0 backdrop:absolute"
+        className="rounded-lg border border-slate-300 bg-white px-8 py-6 backdrop:absolute backdrop:top-0 backdrop:right-0 backdrop:bottom-0 backdrop:left-0 backdrop:bg-slate-500 backdrop:bg-opacity-50"
       >
         <h2 className="mb-2">Create new API key</h2>
         <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
@@ -135,36 +134,36 @@ export default function ApiKeys() {
             <input
               {...register("name", { required: true })}
               placeholder="my-api-key"
-              className="border border-slate-300 p-2 rounded-lg"
+              className="rounded-lg border border-slate-300 p-2"
             />
           </div>
           <input {...register("prefix")} type="hidden" />
           <input {...register("apiKey")} type="hidden" />
           <div className="flex flex-col gap-3">
             <label>API key</label>
-            <div className="flex gap-1 w-full">
-              <span className="px-2 py-2 border rounded-lg text-slate-500 bg-slate-100 flex-grow text-center">
+            <div className="flex w-full gap-1">
+              <span className="flex-grow rounded-lg border bg-slate-100 px-2 py-2 text-center text-slate-500">
                 {generatedPrefix}.{generatedApiKey}
               </span>
-              <Button
+              <button
                 type="button"
-                colourScheme="primary"
+                className="btn btn-primary"
                 onClick={() =>
                   copyTextToClipboard(`${generatedPrefix}.${generatedApiKey}`)
                 }
               >
                 <MdContentCopy className="text-xl" />
-              </Button>
+              </button>
             </div>
-            <p className="text-sm text-slate-500 italic">
+            <p className="text-sm italic text-slate-500">
               Make sure to save the API key before saving it, as it will never
               be shown again.
             </p>
           </div>
           <div className="mt-4 flex justify-center">
-            <Button>Save API key</Button>
+            <button className="btn btn-primary">Save API key</button>
           </div>
-          {errorMsg && <p className="py-2 text-red-500 italic">{errorMsg}</p>}
+          {errorMsg && <p className="py-2 italic text-red-500">{errorMsg}</p>}
         </form>
       </dialog>
     </AuthedLayout>

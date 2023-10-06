@@ -73,11 +73,11 @@ export default function Login() {
           </p>
           <div className="mx-auto flex flex-col gap-3">
             <p>Email:</p>
-            <p className="rounded-lg border bg-slate-200 px-2 py-1 text-center font-mono">
+            <p className="rounded-lg border bg-base-200 px-2 py-1 text-center font-mono">
               test@some-test.test
             </p>
             <p>Password:</p>
-            <p className="rounded-lg border bg-slate-200 px-2 py-1 text-center font-mono">
+            <p className="rounded-lg border bg-base-200 px-2 py-1 text-center font-mono">
               test123456
             </p>
           </div>

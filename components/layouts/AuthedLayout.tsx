@@ -18,16 +18,16 @@ type AuthedLayoutProps = {
 export const AuthedLayout: FC<AuthedLayoutProps> = ({ children, user }) => {
   if (!user) {
     return (
-      <div className="w-screen h-screen flex justify-center items-center">
-        <TailSpin size="lg" colour="slate-500" />
+      <div className="flex h-screen w-screen items-center justify-center">
+        <span className="loading loading-spinner loading-lg" />
       </div>
     );
   }
 
   return (
     <div className="pt-14">
-      <div className="w-full fixed top-0 h-12 bg-white border-b border-slate-400 drop-shadow-lg flex gap-4 items-center px-4">
-        <span className="text-2xl mx-2">API</span>
+      <div className="fixed top-0 flex h-12 w-full items-center gap-4 border-b border-slate-400 bg-white px-4 drop-shadow-lg">
+        <span className="mx-2 text-2xl">API</span>
         <Link href="/">
           <span>
             <MainMenuItem label="HOME" icon={<MdHome className="text-2xl" />} />
