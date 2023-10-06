@@ -5,6 +5,7 @@ import { MainMenuItem } from "../main-menu/MainMenuItem";
 import {
   MdHome,
   MdLibraryBooks,
+  MdMenuBook,
   MdOutlineDocumentScanner,
   MdVpnKey,
 } from "react-icons/md";
@@ -31,6 +32,14 @@ export const AuthedLayout: FC<AuthedLayoutProps> = ({ children, user }) => {
         <Link href="/">
           <span>
             <MainMenuItem label="HOME" icon={<MdHome className="text-2xl" />} />
+          </span>
+        </Link>
+        <Link href="/models">
+          <span>
+            <MainMenuItem
+              label="MODELS"
+              icon={<MdMenuBook className="text-2xl" />}
+            />
           </span>
         </Link>
         <Link href="/api-keys">
